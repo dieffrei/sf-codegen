@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>#{attributes.description}</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>#{attributes.label}</label>
+    <license>Salesforce</license>
+
+each field in fields
+  fieldPermissions
+    field= field.fullName
+    readable= true
+    editable= true
+
+each object in objects
+  objectPermissions
+    allowCreate= true
+    allowDelete= true
+    allowEditallowRead= true
+    modifyAllRecords= true
+    modifyAllRecords= object.fullName
+    viewAllRecords= true
+
+</PermissionSet>
